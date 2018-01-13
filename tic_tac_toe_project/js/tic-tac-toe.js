@@ -1,12 +1,4 @@
-/**
- * Tic Tac Toe
- *
- * A Tic Tac Toe game in HTML/JavaScript/CSS.
- *
- * No dependencies - Uses Vanilla JS
- *
- * @author: Vasanth Krishnamoorthy
- */
+
 var N_SIZE = 3,
   EMPTY = '&nbsp;',
   boxes = [],
@@ -14,9 +6,7 @@ var N_SIZE = 3,
   score,
   moves;
 
-/**
- * Initializes the Tic Tac Toe board and starts the game.
- */
+
 function init() {
   var board = document.createElement('table');
   board.setAttribute('border', 1);
@@ -51,9 +41,7 @@ function init() {
   startNewGame();
 }
 
-/**
- * New game
- */
+
 function startNewGame() {
   score = {
     'X': 0,
@@ -66,9 +54,7 @@ function startNewGame() {
   });
 }
 
-/**
- * Check if a win or not
- */
+
 function win(clicked) {
   // Get all cell classes
   var memberOf = clicked.className.split(/\s+/);
@@ -83,9 +69,7 @@ function win(clicked) {
   return false;
 }
 
-/**
- * Helper function to check if NodeList from selector has a particular text
- */
+
 function contains(selector, text) {
   var elements = document.querySelectorAll(selector);
   return [].filter.call(elements, function (element) {
@@ -93,9 +77,6 @@ function contains(selector, text) {
   });
 }
 
-/**
- * Sets clicked square and also updates the turn.
- */
 function set() {
   if (this.innerHTML !== EMPTY) {
     return;
